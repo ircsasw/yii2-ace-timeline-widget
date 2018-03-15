@@ -2,6 +2,7 @@
 namespace ircsasw\timeline;
 
 use yii\base\Widget;
+use yii\base\InvalidConfigException;
 
 /**
 *  ACEAdmin Timeline widget
@@ -12,6 +13,8 @@ use yii\base\Widget;
 */
 class Timeline extends Widget
 {
+    public $model;
+
     public function init()
     {
         parent::init();
@@ -19,6 +22,6 @@ class Timeline extends Widget
 
     public function run()
     {
-        return parent::run();
+        return $this->render('_timeline', ['model' => $this->model]);
     }
 }
