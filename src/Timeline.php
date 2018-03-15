@@ -13,7 +13,7 @@ use yii\base\InvalidConfigException;
 */
 class Timeline extends Widget
 {
-    public $model;
+    public $models = [];
 
     public function init()
     {
@@ -22,6 +22,6 @@ class Timeline extends Widget
 
     public function run()
     {
-        return $this->render('_timeline', ['model' => $this->model]);
+        return $this->render('_timeline', ['models' => $this->models]);
     }
 }
